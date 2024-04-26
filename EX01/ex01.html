@@ -1,0 +1,30 @@
+<!-- Crie uma página HTML com um botão e uma <div>. Quando o botão é clicado, a cor de
+fundo da <div> deve mudar para uma cor aleatória.
+Obs.: Pode definir uma array com 5 cores que serão trocadas no click do botão. Para a escolha pode-se usar a classe
+Math.randow (para escolher randomicamente) e Math.floor --->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>ex01</title>
+  </head>
+  <body>
+    <button id="btn">Clique aqui</button>
+    <div id="div">oi</div>
+
+    <style></style>
+
+    <script>
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click", function () {
+        let div = document.getElementById("div");
+        let cores = ["red", "blue", "green", "yellow", "pink"];
+        let random = Math.floor(Math.random() * cores.length);
+        div.style.backgroundColor = cores[random];
+      });
+    </script>
+  </body>
+</html>

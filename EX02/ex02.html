@@ -1,0 +1,37 @@
+<!-- Crie uma página HTML com um campo de entrada de texto, um botão "Adicionar"
+   e uma lista de tarefas. Quando o usuário digita uma tarefa no campo de entrada
+    e clica no botão, a tarefa deve ser adicionada à lista.
+Obs.: Para criar um novo elemento HTML utiliza-se o método createElement 
+(Ex.: document.createElement('li');)
+ e para adicionar o novo elemento como filho de uma tag pode-se usar o método appendChild -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <button id="btn">Adicionar</button>
+
+    <ul></ul>
+
+    <script>
+      let tarefa = document.getElementById("btn");
+      tarefa.addEventListener("click", () => {
+        let input = document.querySelector("input");
+        let ul = document.querySelector("ul");
+
+        let li = document.createElement("li");
+
+        li.innerText = input.value;
+
+        ul.appendChild(li);
+
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>

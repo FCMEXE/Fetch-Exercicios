@@ -1,0 +1,25 @@
+<!-- Crie uma página HTML com um botão e um contador. Quando o botão é clicado,
+ o contador deve ser incrementado em 1 e o valor atualizado na página. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">Adicionar</button>
+    <h1>0</h1>
+
+    <script>
+      let btn = document.getElementById("btn");
+      let num = 0;
+      btn.addEventListener("click", () => {
+        num++;
+        let h1 = document.querySelector("h1");
+        h1.innerText = num;
+      });
+    </script>
+  </body>
+</html>

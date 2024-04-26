@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Crie uma página HTML que possui 2 campos e 4 botões (Somar, Subtrair,
+    Dividir e Multiplicar), ao colocar os números e clicar em um dos botões
+    devem realizar a operação escolhida. Obs.: Antes de realizar a operação deve
+    validar se foi digitado os números e se o usuário tentar dividir um número
+    por zero, deve mostrar a mensagem em um alert “Impossível dividir por zero” -->
+    <div class="calc">
+      <label for="text">Numero 01:</label>
+      <input type="text" name="" id="num2" required />
+      <label for="text">Numero 02:</label>
+      <input type="text" name="" id="num1" required />
+      <button id="soma">Somar</button>
+      <button id="sub">Subtrair</button>
+      <button id="mult">Multiplicar</button>
+      <button id="divi">Dividir</button>
+      <h1>0</h1>
+    </div>
+
+    <script>
+      let num1 = document.getElementById("num2");
+      let num2 = document.getElementById("num1");
+      let soma = document.getElementById("soma");
+      let sub = document.getElementById("sub");
+      let mult = document.getElementById("mult");
+      let divi = document.getElementById("divi");
+      let res = document.querySelector("h1");
+      soma.addEventListener("click", () => {
+        if (num1.value == "" || num2.value == "") {
+          alert("Preencha os campos");
+        } else {
+          res.innerHTML = Number(num1.value) + Number(num2.value);
+        }
+      });
+      sub.addEventListener("click", () => {
+        if (num1.value == "" || num2.value == "") {
+          alert("Preencha os campos");
+        } else {
+          res.innerHTML = Number(num1.value) - Number(num2.value);
+        }
+      });
+      mult.addEventListener("click", () => {
+        if (num1.value == "" || num2.value == "") {
+          alert("Preencha os campos");
+        } else {
+          res.innerHTML = Number(num1.value) * Number(num2.value);
+        }
+      });
+      divi.addEventListener("click", () => {
+        if (num1.value == "" || num2.value == "") {
+          alert("Preencha os campos");
+        } else {
+          res.innerHTML = Number(num1.value) / Number(num2.value);
+        }
+      });
+    </script>
+
+    <style>
+      .calc {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        display: flex;
+        padding-top: 150px;
+        font-weight: 30px;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+    </style>
+  </body>
+</html>
